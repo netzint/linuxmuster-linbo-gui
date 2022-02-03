@@ -9,8 +9,25 @@ on:
 name: Build Release
 
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: ./build.sh --nodeb
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: linbofs
+          path: build/linbofs*
+
   deb-package:
-    name: build DEB-Package
+    needs: build
+    name: DEB-Package
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
@@ -36,6 +53,7 @@ jobs:
         with:
           name: deb-package
           path: package/*
+
 
   github-release:
     needs: deb-package
