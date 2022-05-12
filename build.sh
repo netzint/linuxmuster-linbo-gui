@@ -18,10 +18,10 @@
 ## This script will build the linbo GUI for 32 and 64 bit.
 
 # Check ubuntu version
-if [[ $(lsb_release -rs) != "22.04" ]]; then
+if [[ $(lsb_release -rs) != "20.04" ]]; then
 	echo "--------------------------------"
 	echo "- Incompatible ubuntu version! -"
-	echo "-   You have to be on 22.04    -"
+	echo "-   You have to be on 20.04    -"
 	echo "--------------------------------"
 	exit 1
 fi
