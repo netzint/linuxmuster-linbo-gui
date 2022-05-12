@@ -1,3 +1,9 @@
+linuxmuster-linbo-gui7 (17.0.5.1) lmn71; urgency=medium
+
+  * Bump version to 17.0.5.1
+
+ -- Lukas Spitznagel <lukas.spitznagel@netzint.de>  Thu, 12 May 2022 13:06:22 +0100
+
 linuxmuster-linbo-gui7 (17.0.5) lmn71; urgency=medium
 
   * Fix: GuiDisabled not working
