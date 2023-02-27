@@ -83,7 +83,7 @@ public:
     const QString& hddSize() const {
         return this->_hddSize;
     }
-    const QString& cachePath() const {
+    QString cachePath() const {
         return this->_cachePath;
     }
     const QString& hostGroup() const {
@@ -98,17 +98,11 @@ public:
     const bool& autoInitCache() {
         return this->_autoInitCache;
     }
-    const QString& backgroundColor() {
-        return this->_backgroundColor;
-    }
     const DownloadMethod& downloadMethod() {
         return this->_downloadMethod;
     }
     const bool& autoFormat() {
         return this->_autoFormat;
-    }
-    const bool& useMinimalLayout() {
-        return this->_useMinimalLayout;
     }
     const bool& clientDetailsVisibleByDefault() {
         return this->_clientDetailsVisibleByDefault;
@@ -119,8 +113,8 @@ public:
     bool guiDisabled() {
         return this->_guiDisabled;
     }
-    const QString& themeConfFile() const {
-        return this->_themeConfFile;
+    const QString& themeName() const {
+        return this->_themeName;
     }
 
     QMap<QString, LinboImage*> images() {
@@ -164,15 +158,13 @@ private:
     QString _hddSize;
     QString _cachePath;
     QString _hostGroup;
-    QString _themeConfFile;
+    QString _themeName;
     DownloadMethod _downloadMethod;
-    QString _backgroundColor;
     QString _locale;
     unsigned int _rootTimeout;
     bool _autoPartition;
     bool _autoInitCache;
     bool _autoFormat;
-    bool _useMinimalLayout;
     bool _guiDisabled;
     bool _clientDetailsVisibleByDefault;
 

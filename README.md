@@ -1,3 +1,5 @@
+> ⚠️ This is <b>version 7.2.x</b> of the linbo-gui for <b>LMN 7.2</b>. Checkout the [v7.0.x branch](https://github.com/linuxmuster/linuxmuster-linbo-gui/tree/v7.0.x) for the current version for <b>LMN 7.0 and 7.1</b>!
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/linuxmuster/linuxmuster-linbo-gui/master/resources/images/linbo_logo_small.png" alt="Linbo logo" width="70%" />
 </p>
@@ -13,60 +15,60 @@
   <a href="https://crowdin.com/project/linuxmusternet"><img src="https://badges.crowdin.net/linuxmusternet/localized.svg" /></a>
 </p>
 
-This is the GUI of [Linbo](https://github.com/linuxmuster/linuxmuster-linbo) based on Qt5!
+This is the GUI of [Linbo](https://github.com/linuxmuster/linuxmuster-linbo7) based on Qt6!
 
-# Maintainance Details
+### Maintainance Details
     
-Linuxmuster.net official | ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+)  YES
+Linuxmuster.net official | ✅ YES
 :---: | :---: 
-[Community support](https://ask.linuxmuster.net) | ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+)  YES**
-Actively developed | ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+)  YES
+[Community support](https://ask.linuxmuster.net) | ✅ YES**
+Actively developed | ✅ YES
 Maintainer organisation |  Linuxmuster.net e.V. 
-Primary maintainer | dorian@itsblue.de  
+Primary maintainer | dorian@linuxmuster.net
 
 
 ** The linuxmuster community consits of people who are nice and happy to help. They are not directly involved in the development though, and might not be able to help in any case.
 
-# Releases
+### Releases
 The latest release can be found [here](https://github.com/linuxmuster/linuxmuster-linbo-gui/releases/latest)  
 The attached file `linuxmuster-linbo-gui7_*.deb` is the Package which you can install on your server.
 Please note: the prebuilt packages do not contain a 32-bit version.
 
-# Building yourself
+### Compatibility with Linbo
+If you install an incompatible combination of the gui and linbo itself, the gui will not function!
+
+- `>= v7.1.0` is only compatible with Linbo `>= v4.1.0`
+- `< v7.1.0` is only compatible with Linbo `< v4.1.0`
+
+### Building yourself
 For your convenience there is a script to build the package: [build.sh](./build.sh)  
 You have to invoke it in the build root.  
-If you want to build the 32-bit version, you will have to insert `32` in the following places:
-- In the file `/build.sh`: Line 64 change `(64)` to `(64 32)`
-- In the file `/debian/mkarchives.sh`: Line 24 change `for bits in 64; do` to `for bits in 32 64; do`
-Please note: It will take a long time to build the first time you do it.  
 
-# Screenshots
+### Screenshots
 Some screenshots can be found here: https://github.com/linuxmuster/linuxmuster-linbo-gui/tree/master/.github/media  
 Please note that they might not be up to date though.
   
-# Icons
+### Icons
 All of the SVG icons in this Gui were taken from one of the following sources and slighlty modified:
 - The Linux Mint was taken from [Icon Fonts](http://www.onlinewebfonts.com/icon) and is licensed by CC BY 3.0
 - The Debian icon was taken from [debian.org](https://www.debian.org/logos/)
 - The Windows 7 icon was taken from [Wikipedia](https://commons.wikimedia.org/wiki/File:Windows_logo_-_2002%E2%80%932012_(Black).svg)
 - All other icons were taken from [fontawesome.com](https://fontawesome.com/license) and are licensed under the [Creative Commons Attribution 4.0 International license](https://fontawesome.com/license).
 
-# Creating a release
+### Creating a release
 The following steps have to be followed to create a release:
-1. Update the changelog file
-2. Update the version code in the .pro file
-3. commit all changes
-4. Do a git push: `git push`
-5. Wait for translations sync pipeline
-  - if it pushes new changes, do a git pull: `git pull`
-6. Create a git tag in the format v+VERSION (eg. v7.0.0): `git tag vVERSION`
-7. Push tags: `git push --tags`
+- Update the changelog file
+- Update the version code in the CMakeLists.txt file
+- commit all changes
+- Do a git push: `git push`
+- Create a git tag in the format v+VERSION (eg. v7.0.0): `git tag vVERSION`
+- Push tags: `git push --tags`
 
 In case of a mistake, the tag can be deleted:
-1. Locally: `git tag -d vVERSION`
-2. Remotely: `git push --delete origin vVERSION`
+- 1. Locally: `git tag -d vVERSION`
+- 2. Remotely: `git push --delete origin vVERSION`
 
-## Version schema:
+### Version schema:
 - Genreal: `major.minor.patch` ([semver](https://semver.org/))
 - Prereleases (release candidates) must end with `~XX` where `XX` is the number of the Prerelease
   - So, before version `7.1.1` is released, there may be versions `7.1.1~01`, `7.1.1~02`, and so on

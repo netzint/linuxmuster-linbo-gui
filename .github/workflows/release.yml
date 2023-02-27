@@ -11,24 +11,32 @@ name: Build Release
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Build
-        run: ./build.sh --nodeb
+        run: |
+          sudo apt update
+          sudo apt install debhelper
+          ./build.sh
+
+      - name: Copy artifacts
+        run: mkdir package && cp ../linuxmuster-linbo-gui7_* ./package
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linbofs
-          path: build/linbofs*
+          name: deb-package
+          path: package/*
+
+
 
   deb-package:
     needs: build
     name: DEB-Package
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -45,18 +53,10 @@ jobs:
       - name: Build
         run: debian/mkdeb.sh
 
-      - name: Copy artifacts
-        run: mkdir package && cp ../linuxmuster-linbo-gui7_* ./package
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: deb-package
-          path: package/*
 
 
   github-release:
-    needs: deb-package
+    needs: build
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     name: GitHub Release
     runs-on: ubuntu-18.04

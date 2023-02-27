@@ -29,7 +29,6 @@
 
 #include "linbodialog.h"
 #include "linbotoolbutton.h"
-#include "linbolineedit.h"
 #include "linbotextbrowser.h"
 #include "linboradiobutton.h"
 
@@ -41,22 +40,31 @@ class LinboImageCreationDialog : public LinboDialog
 public:
     LinboImageCreationDialog(LinboBackend* backend, QWidget* parent);
 
+public slots:
+    void open(LinboOs* os);
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private:
-    LinboBackend* backend;
-    QVBoxLayout* mainLayout;
-    QButtonGroup* actionButtonGroup;
-    LinboLineEdit* imageNameLineEdit;
-    LinboTextBrowser* imageDescriptionTextBrowser;
+    LinboBackend* _backend;
+    QVBoxLayout* _mainLayout;
+    QButtonGroup* _actionButtonGroup;
+    LinboTextBrowser* _imageDescriptionTextBrowser;
 
-    QButtonGroup* postProcessActionButtonGroup;
-    QHBoxLayout* postProcessActionLayout;
+    QButtonGroup* _postProcessActionButtonGroup;
+    QHBoxLayout* _postProcessActionLayout;
+
+    LinboOs* _targetOs;
+
+    enum ImageCreationAction {
+        BASE_IMAGE,
+        DIFF_IMAGE
+    };
 
 private slots:
-    void refreshPathAndDescription(bool isOpening = false);
-    void createImage(LinboBackend::LinboPostProcessActions postProcessActions);
+    void _refreshPathAndDescription(bool isOpening = false);
+    void _createImage(LinboPostProcessActions::Flags postProcessActions);
 };
 
 #endif // LINBOIMAGECREATIONDIALOG_H
