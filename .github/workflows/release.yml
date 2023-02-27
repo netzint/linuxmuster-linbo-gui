@@ -33,26 +33,6 @@ jobs:
 
 
 
-  deb-package:
-    needs: build
-    name: DEB-Package
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: sudo apt update && sudo apt install debhelper -y
-
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: linbofs
-          path: build
-
-      - name: Build
-        run: debian/mkdeb.sh
-
 
 
   github-release:
