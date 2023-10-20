@@ -18,10 +18,9 @@
 
 #include "linboosselectbutton.h"
 
-LinboOsSelectButton::LinboOsSelectButton(QString icon, LinboOs* os, LinboBackend* backend, QButtonGroup* buttonGroup, QWidget* parent) : QWidget(parent)
+LinboOsSelectButton::LinboOsSelectButton(QString icon, LinboOs* os, LinboBackend* backend, QWidget* parent) : QWidget(parent)
 {
     this->_inited = false;
-    this->_buttonGroup = buttonGroup;
     this->_os = os;
     this->_backend = backend;
     this->_shouldBeVisible = true;
@@ -129,13 +128,16 @@ LinboOsSelectButton::LinboOsSelectButton(QString icon, LinboOs* os, LinboBackend
 
 
     this->_button->setCheckable(true);
-    this->_buttonGroup->addButton(this->_button);
     this->_handleBackendStateChange(this->_backend->state());
 
     QWidget::setVisible(true);
 }
 
 void LinboOsSelectButton::_handlePrimaryButtonClicked() {
+    if (this->_backend->state() == LinboBackend::Autostarting) {
+        this->_backend->cancelCurrentAction();
+    }
+
     if(this->_backend->state() == LinboBackend::Idle)
         switch (this->_os->defaultAction()) {
         case LinboOs::StartOs:

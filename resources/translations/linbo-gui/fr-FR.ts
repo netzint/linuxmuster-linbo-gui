@@ -110,6 +110,7 @@
     <message id="dialog_login_title">
       <location filename="../../../sources/frontend/dialogs/linbologindialog.cpp" line="26"/>
       <location filename="../../../sources/frontend/dialogs/linbologindialog.cpp" line="34"/>
+      <location filename="../../../sources/frontend/dialogs/linbologindialog.cpp" line="70"/>
       <source>Please enter password:</source>
       <translation>Veuillez entrer le mot de passe :</translation>
     </message>
@@ -118,8 +119,13 @@
       <source>login</source>
       <translation>identifiant</translation>
     </message>
+    <message id="dialog_login_title_logging_in">
+      <location filename="../../../sources/frontend/dialogs/linbologindialog.cpp" line="66"/>
+      <source>Logging in...</source>
+      <translation type="unfinished"/>
+    </message>
     <message id="dialog_login_title_wrong">
-      <location filename="../../../sources/frontend/dialogs/linbologindialog.cpp" line="72"/>
+      <location filename="../../../sources/frontend/dialogs/linbologindialog.cpp" line="77"/>
       <source>Wrong password!</source>
       <translation>Mot de passe incorrect !</translation>
     </message>
@@ -136,14 +142,14 @@
     <message id="hostname">
       <location filename="../../../sources/frontend/dialogs/linboregisterdialog.cpp" line="37"/>
       <location filename="../../../sources/frontend/linboclientinfo.cpp" line="35"/>
-      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="65"/>
+      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="61"/>
       <source>Hostname</source>
       <translation>Nom d&apos;hôte</translation>
     </message>
     <message id="ip">
       <location filename="../../../sources/frontend/dialogs/linboregisterdialog.cpp" line="42"/>
       <location filename="../../../sources/frontend/linboclientinfo.cpp" line="41"/>
-      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="67"/>
+      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="63"/>
       <source>IP-Address</source>
       <translation>Adresse IP</translation>
     </message>
@@ -220,7 +226,7 @@
     </message>
     <message id="client_info_mac">
       <location filename="../../../sources/frontend/linboclientinfo.cpp" line="44"/>
-      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="69"/>
+      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="65"/>
       <source>Mac</source>
       <translation>Mac</translation>
     </message>
@@ -265,42 +271,42 @@
       <translation>Enregistrer cet appareil</translation>
     </message>
     <message id="main_message_disabled">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="237"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="240"/>
       <source>This client is controlled remotely. Please don&apos;t power it off.</source>
       <translation>Ce client est contrôlé à distance. Merci de ne pas l&apos;éteindre.</translation>
     </message>
     <message id="main_message_processCrashed">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="258"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="261"/>
       <source>The process %1 crashed:</source>
       <translation>Le processus %1 a planté :</translation>
     </message>
     <message id="main_message_noLogs">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="262"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="265"/>
       <source>No logs before this crash</source>
       <translation>Aucun journal avant ce plantage</translation>
     </message>
     <message id="main_message_lastLogs">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="265"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="268"/>
       <source>The last logs before the crash were:</source>
       <translation>Les derniers logs avant le plantage ont été :</translation>
     </message>
     <message id="main_message_askForHelp">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="270"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="273"/>
       <source>Please ask your system administrator for help.</source>
       <translation>Veuillez demander de l&apos;aide à votre administrateur système.</translation>
     </message>
     <message id="main_message_processFinishedSuccessfully">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="282"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="285"/>
       <source>The process %1 finished successfully.</source>
       <translation>Processus %1 terminé avec succès.</translation>
     </message>
     <message id="main_autostart_label">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="325"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="328"/>
       <source>Starting</source>
       <translation>Démarrage</translation>
     </message>
     <message id="main_rootTimeout_label">
-      <location filename="../../../sources/frontend/linbomainactions.cpp" line="329"/>
+      <location filename="../../../sources/frontend/linbomainactions.cpp" line="332"/>
       <source>Logging out automatically</source>
       <translation>Déconnexion automatique</translation>
     </message>
@@ -335,37 +341,37 @@
       <translation>Êtes-vous sûr? Cela supprimera toutes les données de votre disque !</translation>
     </message>
     <message id="uploadImageOfOS">
-      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="109"/>
+      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="108"/>
       <source>Upload image of %1</source>
       <translation>Téléverser l'image de %1</translation>
     </message>
     <message id="main_noBaseImage">
-      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="123"/>
+      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="122"/>
       <source>No baseimage defined</source>
       <translation>Aucune image de base définie</translation>
     </message>
     <message id="createImageOfOS">
-      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="231"/>
+      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="233"/>
       <source>Create image of %1</source>
       <translation>Créer une image de %1</translation>
     </message>
     <message id="startOS">
-      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="251"/>
+      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="253"/>
       <source>Start %1</source>
       <translation>Démarrer %1</translation>
     </message>
     <message id="syncOS">
-      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="253"/>
+      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="255"/>
       <source>Sync and start %1</source>
       <translation>Synchroniser et démarrer %1</translation>
     </message>
     <message id="reinstallOS">
-      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="255"/>
+      <location filename="../../../sources/frontend/linboosselectbutton.cpp" line="257"/>
       <source>Reinstall %1</source>
       <translation>Réinstaller %1</translation>
     </message>
     <message id="osSelection_noOperatingSystems">
-      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="56"/>
+      <location filename="../../../sources/frontend/linboosselectionrow.cpp" line="52"/>
       <source>No Operating system configured in start.conf</source>
       <translation>Aucun système d&apos;exploitation configuré dans start.conf</translation>
     </message>

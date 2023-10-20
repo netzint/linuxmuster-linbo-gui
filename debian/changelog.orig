@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 linuxmuster-linbo-gui7 (17.2.3) lmn72-testing; urgency=low
 
   * Update depencies for caching-server
@@ -9,6 +10,7 @@ linuxmuster-linbo-gui7 (17.2.2) lmn72-testing; urgency=low
   * Merged master in lmn72-testing
 
  -- Andreas Till <andreas.till@netzint.de>  Mon, 27 Feb 2023 14:16:38 +0200
+=======
 linuxmuster-linbo-gui7 (7.2.4) lmn72; urgency=medium
 
   * fix: show os icon on errors 
@@ -22,6 +24,7 @@ linuxmuster-linbo-gui7 (7.2.3) lmn72; urgency=low
   * feat: skip autostart delay if os button is pressed (#62) 
 
  -- Dorian Zedler <dorian@itsblue.de>  Sat, 23 Sep 2023 09:33:17 +0100
+>>>>>>> linuxmuster.net/master
 
 linuxmuster-linbo-gui7 (7.2.2) lmn72; urgency=low
 

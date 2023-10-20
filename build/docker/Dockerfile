@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 MAINTAINER dorian@linuxmuster.net
 
-ARG QT_EVERYWHERE_URL="https://download.qt.io/archive/qt/6.2/6.2.2/single/qt-everywhere-src-6.2.2.tar.xz"
+ARG QT_EVERYWHERE_URL="https://download.qt.io/archive/qt/6.5/6.5.2/single/qt-everywhere-src-6.5.2.tar.xz"
 
 WORKDIR /workspace
 
@@ -29,8 +29,7 @@ RUN echo "**** download Qt-everywhere ****" && \
   echo "**** extract Qt-everywhere ****" && \
   tar -xf qt-everywhere.tar.xz --strip-components=1 -C ./qt-everywhere && \
   cd qt-everywhere && \
-  ls -l . && \
-  export QT_QPA_PLATFORM=linuxfb && \
+  export QT_QPA_DEFAULT_PLATFORM=linuxfb && \
   \
   echo "**** configure Qt ****" && \
   ./configure \
@@ -75,11 +74,12 @@ RUN echo "**** download Qt-everywhere ****" && \
      -skip qtlocation \
      -skip qtscript \
      -skip qtdeclarative \
+     -skip qtgrpc \
      -skip qtmultimedia \
+     -skip qtquick \
      -skip qtquickcontrols \
      -skip qtquickcontrols2 \
      -skip qtsensors \
-     -skip qtwebsockets \
      -skip qtwinextras \
      -skip qtwebchannel \
      -skip qtwebengine \
@@ -89,19 +89,26 @@ RUN echo "**** download Qt-everywhere ****" && \
      -skip qtx11extras \
      -skip qt5compat \
      -skip qtlottie \
+     -skip qtshadertools \
      -skip qtmqtt \
+     -skip qthttpserver \
+     -skip qtwebsockets \
+     -skip qtremoteobjects \
      -skip qtopcua \
      -skip qtquicktimeline \
      -skip qtquick3d \
+     -skip qtquick3dphysics \
+     -skip qtquickeffectmaker \
      -skip qtscxml \
      -skip qttranslations \
      -skip qtvirtualkeyboard \
      -skip qtwebview \
      -skip qtpositioning \
+     -skip qtlanguageserver \
      -skip qtcoap && \
   \
   echo "**** build Qt ****" && \
-  make -j8 && \	
+  make -j 16 -l 2.5 && \	
   \
   echo "**** install Qt ****" && \
   make install && \
